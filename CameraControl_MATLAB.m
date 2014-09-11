@@ -18,8 +18,8 @@ FrameCount = 5; % Number of pictures to take
 
 for iFrame = 1:FrameCount
     myCamera.CapturePhoto();
-    pause(2); % Give the program time to take the photograph and copy over the data
-
-    Data = imread([pwd '\Photos\' char(LastPhoto.FileName)]); % Grab the data from the jpg photograph
+    pause(3); % Give the program time to take the photograph and copy over the data
+    Data.(['Frame' int2str(iFrame)]) = imread([pwd '\Photos\' char(LastPhoto.FileName)]); % Grab the data from the jpg photograph
+    pause(2); 
 end
 
